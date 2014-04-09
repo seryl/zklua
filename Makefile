@@ -14,7 +14,7 @@ LUA_VERSION_NUMBER = 5.1
 
 CC = gcc
 CFLAGS = `pkg-config --cflags $(LUA_VERSION)` -fPIC -O2 #-Wall
-INSTALL_PATH = $(pkg-config $(LUA_VERSION) --variable=INSTALL_CMOD)
+INSTALL_PATH = $(shell pkg-config $(LUA_VERSION) --variable=INSTALL_CMOD)
 
 OS_NAME = $(shell uname -s)
 MH_NAME = $(shell uname -m)
@@ -46,9 +46,10 @@ clean:
 	rm -f *.o *.so
 
 install: zklua.so
+	mkdir -p $(INSTALL_PATH)/zklua
 ifeq ($(OS_NAME), Darwin)
-	install zklua.so $(INSTALL_PATH)/zklua.so
+	install zklua.so $(INSTALL_PATH)/zklua/zklua.so
 else
-	install -D -s zklua.so $(INSTALL_PATH)/zklua.so
+	install -D -s zklua.so $(INSTALL_PATH)/zklua/zklua.so
 endif
 	
