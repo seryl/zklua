@@ -1,8 +1,8 @@
 package = "zklua"
 version = "scm-0"
 source = {
-   url = "git://github.com/forhappy/zklua.git",
-   branch = "master"
+   url = "git@github.com:seryl/zklua.git",
+   branch = "prepare_for_luarocks"
 }
 description = {
    summary = "Lua binding for apache zookeeper.",
