@@ -1,7 +1,7 @@
 package = "zklua"
 version = "scm-0"
 source = {
-   url = "git@github.com:seryl/zklua.git",
+   url = "https://github.com:seryl/zklua.git",
    branch = "prepare_for_luarocks"
 }
 description = {
